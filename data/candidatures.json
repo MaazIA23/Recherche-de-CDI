@@ -1,0 +1,922 @@
+{
+ "maj": "2026-09-23",
+ "candidatures": [
+  {
+   "date": "2026-01-30",
+   "entreprise": "Capgemini",
+   "poste": "Cheffe de projet Transformation digitale & IA",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-02-05",
+   "note": ""
+  },
+  {
+   "date": "2026-01-30",
+   "entreprise": "Sofyne",
+   "poste": "Chef·fe de projet IT, Lyon",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-02-09",
+   "note": ""
+  },
+  {
+   "date": "2026-02-03",
+   "entreprise": "Capgemini",
+   "poste": "Consultante Transformation digitale & IA",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-02-12",
+   "note": ""
+  },
+  {
+   "date": "2026-02-03",
+   "entreprise": "Hardis Group",
+   "poste": "Consultante transformation digitale",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-02-09",
+   "note": ""
+  },
+  {
+   "date": "2026-02-03",
+   "entreprise": "Hardis Group",
+   "poste": "Candidature spontanée",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-02-04",
+   "note": ""
+  },
+  {
+   "date": "2026-02-05",
+   "entreprise": "wizio.fr",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "sans",
+   "retour": "2026-02-19",
+   "note": "Candidature vue 2 fois"
+  },
+  {
+   "date": "2026-02-05",
+   "entreprise": "Hays (cabinet)",
+   "poste": "Chef de projet IT, CDI Paris",
+   "canal": "DIR",
+   "issue": "sans",
+   "retour": "",
+   "note": "Réponse à une approche du cabinet"
+  },
+  {
+   "date": "2026-02-06",
+   "entreprise": "Akkodis",
+   "poste": "IT Project Manager",
+   "canal": "SITE",
+   "issue": "sans",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-02-10",
+   "entreprise": "Néosoft",
+   "poste": "Chef·fe de projet IT, Paris",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-03-13",
+   "note": "Vue le 11 févr."
+  },
+  {
+   "date": "2026-02-11",
+   "entreprise": "Sopra Steria Next",
+   "poste": "Consultante transformation digitale RH, Toulouse",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-02-12",
+   "note": ""
+  },
+  {
+   "date": "2026-02-12",
+   "entreprise": "Blue Soft Empower",
+   "poste": "Coordinatrice de projet IT",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-02-17",
+   "note": ""
+  },
+  {
+   "date": "2026-02-12",
+   "entreprise": "Solutec",
+   "poste": "Poste non précisé",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-02-15",
+   "note": ""
+  },
+  {
+   "date": "2026-02-16",
+   "entreprise": "EDF",
+   "poste": "Cheffe de projet IT confirmée",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-02-19",
+   "note": ""
+  },
+  {
+   "date": "2026-02-20",
+   "entreprise": "Step Up Lyon",
+   "poste": "Poste non précisé",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-02-25",
+   "note": ""
+  },
+  {
+   "date": "2026-02-26",
+   "entreprise": "Devoteam",
+   "poste": "PMO IT",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-03-02",
+   "note": ""
+  },
+  {
+   "date": "2026-03-02",
+   "entreprise": "Akkodis",
+   "poste": "Chef de projet IT",
+   "canal": "SITE",
+   "issue": "sans",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-03-04",
+   "entreprise": "École des Mines de Saint-Étienne",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "sans",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-03-07",
+   "entreprise": "Capgemini",
+   "poste": "Consultante Transformation digitale & IA",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-03-12",
+   "note": ""
+  },
+  {
+   "date": "2026-03-14",
+   "entreprise": "Synchrone",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "sans",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-03-16",
+   "entreprise": "Inetum",
+   "poste": "Chef de projet IA → PMO fonctionnel",
+   "canal": "IND",
+   "issue": "refus",
+   "retour": "2026-03-31",
+   "note": "Échanges avec le recruteur avant le refus",
+   "entretiens": 1
+  },
+  {
+   "date": "2026-03-16",
+   "entreprise": "Entreprise non précisée",
+   "poste": "Chef de projet Data",
+   "canal": "IND",
+   "issue": "refus",
+   "retour": "2026-05-05",
+   "note": ""
+  },
+  {
+   "date": "2026-03-16",
+   "entreprise": "Framatome",
+   "poste": "Cheffe de projet Infrastructure",
+   "canal": "INT",
+   "issue": "refus",
+   "retour": "2026-03-25",
+   "note": ""
+  },
+  {
+   "date": "2026-03-18",
+   "entreprise": "Groupe Valority",
+   "poste": "Poste non précisé",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-03-22",
+   "note": ""
+  },
+  {
+   "date": "2026-03-19",
+   "entreprise": "Gerflor",
+   "poste": "Chef de projet Data",
+   "canal": "IND",
+   "issue": "refus",
+   "retour": "2026-03-24",
+   "note": ""
+  },
+  {
+   "date": "2026-03-20",
+   "entreprise": "E-I",
+   "poste": "Chef de projet informatique",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-03-25",
+   "note": ""
+  },
+  {
+   "date": "2026-03-20",
+   "entreprise": "Helpline",
+   "poste": "Chef de projet Data e-commerce",
+   "canal": "IND",
+   "issue": "refus",
+   "retour": "2026-04-21",
+   "note": "Poste pourvu"
+  },
+  {
+   "date": "2026-03-26",
+   "entreprise": "Framatome",
+   "poste": "Data Scientist IA",
+   "canal": "INT",
+   "issue": "refus",
+   "retour": "2026-04-01",
+   "note": ""
+  },
+  {
+   "date": "2026-03-27",
+   "entreprise": "Sia",
+   "poste": "Manager AI Transformation, Lyon",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-04-06",
+   "note": "Vue le 2 avr."
+  },
+  {
+   "date": "2026-03-29",
+   "entreprise": "Hospices Civils de Lyon",
+   "poste": "Cheffe de projet BI / Data",
+   "canal": "IND",
+   "issue": "refus",
+   "retour": "2026-04-09",
+   "note": ""
+  },
+  {
+   "date": "2026-03-30",
+   "entreprise": "eXalt",
+   "poste": "Chef de projet IT, Lyon",
+   "canal": "SITE",
+   "issue": "entretien",
+   "retour": "2026-04-09",
+   "note": "Entretien visio le 9 avr., pas de suite connue",
+   "entretiens": 1
+  },
+  {
+   "date": "2026-04-03",
+   "entreprise": "Capgemini",
+   "poste": "Business Analyst Transformation digitale & IA",
+   "canal": "DIR",
+   "issue": "sans",
+   "retour": "",
+   "note": "Cooptation"
+  },
+  {
+   "date": "2026-04-04",
+   "entreprise": "Capgemini",
+   "poste": "Data Architect",
+   "canal": "DIR",
+   "issue": "sans",
+   "retour": "",
+   "note": "Cooptation"
+  },
+  {
+   "date": "2026-04-04",
+   "entreprise": "Capgemini",
+   "poste": "Data Engineer confirmé",
+   "canal": "DIR",
+   "issue": "refus",
+   "retour": "2026-04-15",
+   "note": "Cooptation"
+  },
+  {
+   "date": "2026-04-04",
+   "entreprise": "Capgemini",
+   "poste": "Architecte Data",
+   "canal": "DIR",
+   "issue": "refus",
+   "retour": "2026-04-15",
+   "note": "Cooptation"
+  },
+  {
+   "date": "2026-04-04",
+   "entreprise": "Capgemini",
+   "poste": "Lead Data Analyst",
+   "canal": "DIR",
+   "issue": "sans",
+   "retour": "",
+   "note": "Cooptation"
+  },
+  {
+   "date": "2026-04-04",
+   "entreprise": "Capgemini",
+   "poste": "Consultante Transformation digitale & IA",
+   "canal": "DIR",
+   "issue": "refus",
+   "retour": "2026-04-16",
+   "note": "Cooptation"
+  },
+  {
+   "date": "2026-04-04",
+   "entreprise": "Teolia",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "sans",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-04-04",
+   "entreprise": "Exakis Nelite",
+   "poste": "Chef de projet Data IA",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-05-22",
+   "note": ""
+  },
+  {
+   "date": "2026-04-28",
+   "entreprise": "Schneider Electric",
+   "poste": "Poste IA (CSH)",
+   "canal": "SITE",
+   "issue": "sans",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-05-07",
+   "entreprise": "Framatome",
+   "poste": "Chef de projet international LTSA",
+   "canal": "INT",
+   "issue": "refus",
+   "retour": "2026-05-20",
+   "note": "Redirigée vers les offres jeunes diplômés"
+  },
+  {
+   "date": "2026-05-12",
+   "entreprise": "Ministère des Armées (numérique)",
+   "poste": "Candidature spontanée",
+   "canal": "DIR",
+   "issue": "sans",
+   "retour": "2026-05-28",
+   "note": "Accusé de réception seulement"
+  },
+  {
+   "date": "2026-05-19",
+   "entreprise": "Framatome",
+   "poste": "IMS Manager / IT Business Partner EPR2 (réf. 2026-26343, Paris)",
+   "canal": "INT",
+   "issue": "refus",
+   "retour": "",
+   "note": "3 entretiens (le 2e mené directement avec le décideur final). Refus : profil senior recherché, retours très encourageants sur le profil.",
+   "entretiens": 3
+  },
+  {
+   "date": "2026-06-10",
+   "entreprise": "Wavestone",
+   "poste": "Consultante junior Data/IA, Lyon",
+   "canal": "DIR",
+   "issue": "refus",
+   "retour": "2026-06-24",
+   "note": "Recommandée par une salariée"
+  },
+  {
+   "date": "2026-06-15",
+   "entreprise": "E-I",
+   "poste": "Chef de projet informatique",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-06-23",
+   "note": ""
+  },
+  {
+   "date": "2026-06-15",
+   "entreprise": "Step Up Lyon",
+   "poste": "Chef de projet déploiement & conduite du changement",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-06-25",
+   "note": "Poste pourvu"
+  },
+  {
+   "date": "2026-06-24",
+   "entreprise": "Alteca",
+   "poste": "Chef de projet IT",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-06-30",
+   "note": "Vue le 24 juin"
+  },
+  {
+   "date": "2026-06-29",
+   "entreprise": "Assurance Maladie (CNAM)",
+   "poste": "Chef de projet / Business Analyst IA",
+   "canal": "SITE",
+   "issue": "sans",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-07-06",
+   "entreprise": "ALTHEA",
+   "poste": "Data Analyst",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-07-10",
+   "note": "Vue le 7 juil."
+  },
+  {
+   "date": "2026-07-06",
+   "entreprise": "Winside Technology",
+   "poste": "Chef de projet IT / Business Analyst",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-07-10",
+   "note": ""
+  },
+  {
+   "date": "2026-07-06",
+   "entreprise": "Groupe LR Technologies",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "sans",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-08-20",
+   "entreprise": "Groupe hospitalier Diaconesses Croix Saint-Simon",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "sans",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-08-20",
+   "entreprise": "ACSSI",
+   "poste": "Product Owner Industrie",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-09-11",
+   "note": "Vue le 21 août"
+  },
+  {
+   "date": "2026-08-20",
+   "entreprise": "Néosoft",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "sans",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-08-20",
+   "entreprise": "Niji",
+   "poste": "Manager Data & IA",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-09-08",
+   "note": ""
+  },
+  {
+   "date": "2026-08-20",
+   "entreprise": "Assystem",
+   "poste": "Product Owner",
+   "canal": "SITE",
+   "issue": "entretien",
+   "retour": "2026-09-18",
+   "note": "A ouvert le processus Assystem",
+   "entretiens": 4
+  },
+  {
+   "date": "2026-08-21",
+   "entreprise": "Hygie31",
+   "poste": "Cheffe de projet IT / transformation digitale",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-09-08",
+   "note": "Vue le 21 août"
+  },
+  {
+   "date": "2026-08-25",
+   "entreprise": "Sia",
+   "poste": "Manager AI Transformation, Lyon",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-09-03",
+   "note": ""
+  },
+  {
+   "date": "2026-08-27",
+   "entreprise": "Clayens",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "sans",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-08-27",
+   "entreprise": "Assystem",
+   "poste": "Chef de projet ingénierie nucléaire & transformation digitale",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-09-08",
+   "note": "Poste pourvu"
+  },
+  {
+   "date": "2026-08-27",
+   "entreprise": "Assystem",
+   "poste": "Ingénieur projet / PMO",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-09-03",
+   "note": ""
+  },
+  {
+   "date": "2026-08-28",
+   "entreprise": "evoteo",
+   "poste": "Cheffe de projet Data",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-08-31",
+   "note": "Plus approche réseau (recommandation)"
+  },
+  {
+   "date": "2026-08-30",
+   "entreprise": "Qo|Up",
+   "poste": "Chef de projet informatique",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-09-02",
+   "note": ""
+  },
+  {
+   "date": "2026-08-30",
+   "entreprise": "SQLI",
+   "poste": "Product Owner",
+   "canal": "LI",
+   "issue": "sans",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-08-31",
+   "entreprise": "Shift Consulting",
+   "poste": "Product Owner",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-09-03",
+   "note": ""
+  },
+  {
+   "date": "2026-08-31",
+   "entreprise": "CONSULTYS",
+   "poste": "PMO junior, région lyonnaise",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-09-08",
+   "note": ""
+  },
+  {
+   "date": "2026-08-31",
+   "entreprise": "MIGSO-PCUBED",
+   "poste": "4 offres PMO / projet",
+   "canal": "LI",
+   "issue": "sans",
+   "retour": "",
+   "note": "4 candidatures le même jour",
+   "nombre": 4
+  },
+  {
+   "date": "2026-09-01",
+   "entreprise": "MIGSO-PCUBED",
+   "poste": "3 offres PMO / projet",
+   "canal": "LI",
+   "issue": "sans",
+   "retour": "",
+   "note": "3 candidatures (1er et 2 sept.)",
+   "nombre": 3
+  },
+  {
+   "date": "2026-09-01",
+   "entreprise": "PIMAN Group",
+   "poste": "Chef de projet",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-09-17",
+   "note": ""
+  },
+  {
+   "date": "2026-09-05",
+   "entreprise": "Artelia",
+   "poste": "Cheffe de projet ingénierie industrielle",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-09-08",
+   "note": ""
+  },
+  {
+   "date": "2026-09-05",
+   "entreprise": "PRIME ENGINEERING",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "sans",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-09-05",
+   "entreprise": "VINCI Energies (TG Concept)",
+   "poste": "Chef de projets",
+   "canal": "SITE",
+   "issue": "attente",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-09-05",
+   "entreprise": "Flatpay",
+   "poste": "BI Analyst",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-09-22",
+   "note": ""
+  },
+  {
+   "date": "2026-09-06",
+   "entreprise": "Assystem",
+   "poste": "Business Consultant PLM",
+   "canal": "SITE",
+   "issue": "entretien",
+   "retour": "2026-09-18",
+   "note": "Rattaché au processus Assystem"
+  },
+  {
+   "date": "2026-09-06",
+   "entreprise": "Tech'Orléans",
+   "poste": "Cheffe de projet IA (Boost AI)",
+   "canal": "DIR",
+   "issue": "entretien",
+   "retour": "2026-09-09",
+   "note": "Entretien visio le 9 sept., en attente",
+   "entretiens": 1
+  },
+  {
+   "date": "2026-09-07",
+   "entreprise": "Cognite",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "attente",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-09-08",
+   "entreprise": "Assystem",
+   "poste": "Business Consultant transfo digitale & nucléaire",
+   "canal": "SITE",
+   "issue": "entretien",
+   "retour": "2026-09-18",
+   "note": "Rattaché au processus Assystem"
+  },
+  {
+   "date": "2026-09-08",
+   "entreprise": "MIGSO-PCUBED",
+   "poste": "4 offres PMO / projet",
+   "canal": "LI",
+   "issue": "attente",
+   "retour": "",
+   "note": "3 le 8 sept., 1 le 9 sept.",
+   "nombre": 4
+  },
+  {
+   "date": "2026-09-09",
+   "entreprise": "EFOR",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "attente",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-09-09",
+   "entreprise": "Le Mouton à 5 pattes",
+   "poste": "Responsable de projet",
+   "canal": "LI",
+   "issue": "attente",
+   "retour": "",
+   "note": "Sans nouvelles sous 2 semaines, selon le cabinet, cela vaut refus"
+  },
+  {
+   "date": "2026-09-09",
+   "entreprise": "Framatome",
+   "poste": "PMO V&V",
+   "canal": "INT",
+   "issue": "attente",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-09-09",
+   "entreprise": "Entreprise non précisée",
+   "poste": "Ingénieure PMO risques & opportunités",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-09-09",
+   "note": ""
+  },
+  {
+   "date": "2026-09-10",
+   "entreprise": "Devoteam",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "attente",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-09-10",
+   "entreprise": "Masentó Group",
+   "poste": "Data, AI, Project Manager",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-09-13",
+   "note": ""
+  },
+  {
+   "date": "2026-09-10",
+   "entreprise": "Laboratoires Théa",
+   "poste": "IS Business Partner",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-09-18",
+   "note": ""
+  },
+  {
+   "date": "2026-09-10",
+   "entreprise": "Upfluence",
+   "poste": "Data/AI Product Manager",
+   "canal": "IND",
+   "issue": "refus",
+   "retour": "2026-09-11",
+   "note": ""
+  },
+  {
+   "date": "2026-09-10",
+   "entreprise": "Tenor",
+   "poste": "Chef de projets ETL",
+   "canal": "IND",
+   "issue": "refus",
+   "retour": "2026-09-11",
+   "note": ""
+  },
+  {
+   "date": "2026-09-10",
+   "entreprise": "Entreprise non précisée",
+   "poste": "Product Owner",
+   "canal": "IND",
+   "issue": "attente",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-09-14",
+   "entreprise": "Exakis Nelite",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "attente",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-09-14",
+   "entreprise": "GCA Groupe Charles André",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "attente",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-09-14",
+   "entreprise": "mpulse",
+   "poste": "Consultante PMO IT / transformation digitale",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-09-21",
+   "note": "Vue le 16 sept."
+  },
+  {
+   "date": "2026-09-14",
+   "entreprise": "Néosoft",
+   "poste": "Chef de projet informatique",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-09-18",
+   "note": ""
+  },
+  {
+   "date": "2026-09-14",
+   "entreprise": "PIMAN Group",
+   "poste": "Responsable de projet industriel",
+   "canal": "LI",
+   "issue": "refus",
+   "retour": "2026-09-22",
+   "note": ""
+  },
+  {
+   "date": "2026-09-14",
+   "entreprise": "Talan",
+   "poste": "Chef de projet IT / Product Owner, énergie",
+   "canal": "SITE",
+   "issue": "attente",
+   "retour": "2026-09-22",
+   "note": "Via LinkedIn puis site carrière"
+  },
+  {
+   "date": "2026-09-14",
+   "entreprise": "Sopra Steria",
+   "poste": "Cheffe / Directrice de projet IT, Lyon",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-09-15",
+   "note": ""
+  },
+  {
+   "date": "2026-09-17",
+   "entreprise": "Atos",
+   "poste": "Consultante transformation digitale",
+   "canal": "SITE",
+   "issue": "attente",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-09-20",
+   "entreprise": "DGA Maîtrise de l'information",
+   "poste": "Poste ingénieur / experte",
+   "canal": "SITE",
+   "issue": "attente",
+   "retour": "2026-09-21",
+   "note": "Habilitation requise"
+  },
+  {
+   "date": "2026-09-20",
+   "entreprise": "Département du Rhône",
+   "poste": "Chargée de projets IA et Data",
+   "canal": "SITE",
+   "issue": "refus",
+   "retour": "2026-09-22",
+   "note": ""
+  },
+  {
+   "date": "2026-09-22",
+   "entreprise": "Aubay",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "attente",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-09-22",
+   "entreprise": "Morgan Philips",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "attente",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-09-22",
+   "entreprise": "FDC Fabien Drouin Consulting",
+   "poste": "Poste via LinkedIn",
+   "canal": "LI",
+   "issue": "attente",
+   "retour": "2026-09-22",
+   "note": "Vue le jour même"
+  },
+  {
+   "date": "2026-09-23",
+   "entreprise": "Limagrain",
+   "poste": "AI Transformation Lead",
+   "canal": "SITE",
+   "issue": "attente",
+   "retour": "",
+   "note": ""
+  }
+ ]
+}

@@ -134,7 +134,7 @@ footer{font-size:12.5px;color:var(--muted);max-width:80ch}
 
 <div class="wrap">
   <header>
-    <div class="eyebrow">Point d'étape · au 23 septembre 2026</div>
+    <div class="eyebrow">Point d'étape · au <span id="asof">23 septembre 2026</span></div>
     <h1>Recherche d'emploi de Mazidath Bello</h1>
     <p class="profile">Cheffe de projet Data, IA &amp; transformation digitale. Alternance chez Framatome en fin de parcours, Mastère Artificial Intelligence Management (RNCP 7, soutenance en octobre 2026). Recherche d'un CDI, principalement à Lyon, dans l'énergie, l'industrie et le conseil.</p>
     <div class="meta"><span>Période couverte : janvier → septembre 2026</span><span>Sources : e-mails de confirmation, de refus et de suivi (LinkedIn, sites carrière, Indeed, contacts directs)</span></div>
@@ -160,7 +160,7 @@ footer{font-size:12.5px;color:var(--muted);max-width:80ch}
       <ul class="agenda">
         <li><span class="when">7 oct.</span><span class="what"><b>Assystem : entretien en agence</b><small>Lyon 7e, 11h. Préparation : projets nucléaire et transformation digitale chez Framatome.</small></span></li>
         <li><span class="when">Cette sem.</span><span class="what"><b>Tech'Orléans : relancer</b><small>Poste de cheffe de projet IA (programme Boost AI). Entretien visio passé le 9 sept., pas de retour depuis.</small></span></li>
-        <li><span class="when">En cours</span><span class="what"><b>Framatome : 2 pistes internes</b><small>PMO V&amp;V (candidature du 9 sept.) et poste ISM/ITBP EPR2 (CV transmis au manager en mai). À relancer via le réseau interne.</small></span></li>
+        <li><span class="when">En cours</span><span class="what"><b>Framatome : PMO V&amp;V</b><small>Candidature interne du 9 sept., à relancer via le réseau interne. Le poste IMS Manager / ITBP EPR2 s'est terminé par un refus après 3 entretiens (profil senior recherché), avec des retours très encourageants.</small></span></li>
         <li class="flag"><span class="when">En cours</span><span class="what"><b>DGA Maîtrise de l'information : dossier complété</b><small>Diplôme et nationalité transmis le 21 sept. Point d'attention : ces postes exigent une habilitation, ce qui peut bloquer pour une candidate de nationalité non française.</small></span></li>
         <li><span class="when">En attente</span><span class="what"><b>Candidatures récentes sans réponse</b><small>Limagrain (AI Transformation Lead), Talan (Chef de projet IT / PO Énergie), Atos (Consultante transformation digitale), Aubay, Morgan Philips, FDC (candidature vue le 22 sept.).</small></span></li>
         <li><span class="when">Oct.</span><span class="what"><b>Soutenance du Mastère</b><small>Fin de formation le 23 octobre : disponible pour une prise de poste à partir de fin octobre 2026.</small></span></li>
@@ -207,120 +207,24 @@ footer{font-size:12.5px;color:var(--muted);max-width:80ch}
 <div class="tip" id="tip" hidden></div>
 
 <script>
-// d: date d'envoi (AAAA-MM-JJ), e: entreprise, p: poste, c: canal, s: issue (entretien|refus|attente|sans; vide = calculée), r: date du dernier retour, n: note
+// Les données vivent dans data/candidatures.json (mises à jour par la routine Gmail).
+// Champs : date, entreprise, poste, canal (LI|SITE|IND|DIR|INT), issue (entretien|refus|attente|sans, vide = calculée),
+// retour (date du dernier retour), note, entretiens (nombre d'entretiens passés), nombre (offres regroupées sur une ligne)
 const C={LI:"LinkedIn (simplifiée)",SITE:"Site carrière",IND:"Indeed",DIR:"Contact direct / réseau",INT:"Framatome (interne)"};
-const A=[
-["2026-01-30","Capgemini","Cheffe de projet Transformation digitale & IA","LI","refus","2026-02-05"],
-["2026-01-30","Sofyne","Chef·fe de projet IT, Lyon","SITE","refus","2026-02-09"],
-["2026-02-03","Capgemini","Consultante Transformation digitale & IA","LI","refus","2026-02-12"],
-["2026-02-03","Hardis Group","Consultante transformation digitale","SITE","refus","2026-02-09"],
-["2026-02-03","Hardis Group","Candidature spontanée","SITE","refus","2026-02-04"],
-["2026-02-05","wizio.fr","Poste via LinkedIn","LI","sans","2026-02-19","Candidature vue 2 fois"],
-["2026-02-05","Hays (cabinet)","Chef de projet IT, CDI Paris","DIR","sans","","Réponse à une approche du cabinet"],
-["2026-02-06","Akkodis","IT Project Manager","SITE","sans"],
-["2026-02-10","Néosoft","Chef·fe de projet IT, Paris","LI","refus","2026-03-13","Vue le 11 févr."],
-["2026-02-11","Sopra Steria Next","Consultante transformation digitale RH, Toulouse","LI","refus","2026-02-12"],
-["2026-02-12","Blue Soft Empower","Coordinatrice de projet IT","SITE","refus","2026-02-17"],
-["2026-02-12","Solutec","Poste non précisé","SITE","refus","2026-02-15"],
-["2026-02-16","EDF","Cheffe de projet IT confirmée","SITE","refus","2026-02-19"],
-["2026-02-20","Step Up Lyon","Poste non précisé","SITE","refus","2026-02-25"],
-["2026-02-26","Devoteam","PMO IT","LI","refus","2026-03-02"],
-["2026-03-02","Akkodis","Chef de projet IT","SITE","sans"],
-["2026-03-04","École des Mines de Saint-Étienne","Poste via LinkedIn","LI","sans"],
-["2026-03-07","Capgemini","Consultante Transformation digitale & IA","LI","refus","2026-03-12"],
-["2026-03-14","Synchrone","Poste via LinkedIn","LI","sans"],
-["2026-03-16","Inetum","Chef de projet IA → PMO fonctionnel","IND","refus","2026-03-31","Échanges avec le recruteur avant le refus"],
-["2026-03-16","Entreprise non précisée","Chef de projet Data","IND","refus","2026-05-05"],
-["2026-03-16","Framatome","Cheffe de projet Infrastructure","INT","refus","2026-03-25"],
-["2026-03-18","Groupe Valority","Poste non précisé","SITE","refus","2026-03-22"],
-["2026-03-19","Gerflor","Chef de projet Data","IND","refus","2026-03-24"],
-["2026-03-20","E-I","Chef de projet informatique","SITE","refus","2026-03-25"],
-["2026-03-20","Helpline","Chef de projet Data e-commerce","IND","refus","2026-04-21","Poste pourvu"],
-["2026-03-26","Framatome","Data Scientist IA","INT","refus","2026-04-01"],
-["2026-03-27","Sia","Manager AI Transformation, Lyon","LI","refus","2026-04-06","Vue le 2 avr."],
-["2026-03-29","Hospices Civils de Lyon","Cheffe de projet BI / Data","IND","refus","2026-04-09"],
-["2026-03-30","eXalt","Chef de projet IT, Lyon","SITE","entretien","2026-04-09","Entretien visio le 9 avr., pas de suite connue"],
-["2026-04-03","Capgemini","Business Analyst Transformation digitale & IA","DIR","sans","","Cooptation"],
-["2026-04-04","Capgemini","Data Architect","DIR","sans","","Cooptation"],
-["2026-04-04","Capgemini","Data Engineer confirmé","DIR","refus","2026-04-15","Cooptation"],
-["2026-04-04","Capgemini","Architecte Data","DIR","refus","2026-04-15","Cooptation"],
-["2026-04-04","Capgemini","Lead Data Analyst","DIR","sans","","Cooptation"],
-["2026-04-04","Capgemini","Consultante Transformation digitale & IA","DIR","refus","2026-04-16","Cooptation"],
-["2026-04-04","Teolia","Poste via LinkedIn","LI","sans"],
-["2026-04-04","Exakis Nelite","Chef de projet Data IA","LI","refus","2026-05-22"],
-["2026-04-28","Schneider Electric","Poste IA (CSH)","SITE","sans"],
-["2026-05-07","Framatome","Chef de projet international LTSA","INT","refus","2026-05-20","Redirigée vers les offres jeunes diplômés"],
-["2026-05-12","Ministère des Armées (numérique)","Candidature spontanée","DIR","sans","2026-05-28","Accusé de réception seulement"],
-["2026-05-19","Framatome","ISM / IT Business Partner EPR2","INT","sans","2026-05-19","Cooptation interne, CV transmis au manager EPR2 : à relancer"],
-["2026-06-10","Wavestone","Consultante junior Data/IA, Lyon","DIR","refus","2026-06-24","Recommandée par une salariée"],
-["2026-06-15","E-I","Chef de projet informatique","SITE","refus","2026-06-23"],
-["2026-06-15","Step Up Lyon","Chef de projet déploiement & conduite du changement","SITE","refus","2026-06-25","Poste pourvu"],
-["2026-06-24","Alteca","Chef de projet IT","LI","refus","2026-06-30","Vue le 24 juin"],
-["2026-06-29","Assurance Maladie (CNAM)","Chef de projet / Business Analyst IA","SITE","sans"],
-["2026-07-06","ALTHEA","Data Analyst","LI","refus","2026-07-10","Vue le 7 juil."],
-["2026-07-06","Winside Technology","Chef de projet IT / Business Analyst","LI","refus","2026-07-10"],
-["2026-07-06","Groupe LR Technologies","Poste via LinkedIn","LI","sans"],
-["2026-08-20","Groupe hospitalier Diaconesses Croix Saint-Simon","Poste via LinkedIn","LI","sans"],
-["2026-08-20","ACSSI","Product Owner Industrie","LI","refus","2026-09-11","Vue le 21 août"],
-["2026-08-20","Néosoft","Poste via LinkedIn","LI","sans"],
-["2026-08-20","Niji","Manager Data & IA","SITE","refus","2026-09-08"],
-["2026-08-20","Assystem","Product Owner","SITE","entretien","2026-09-18","A ouvert le processus Assystem"],
-["2026-08-21","Hygie31","Cheffe de projet IT / transformation digitale","LI","refus","2026-09-08","Vue le 21 août"],
-["2026-08-25","Sia","Manager AI Transformation, Lyon","LI","refus","2026-09-03"],
-["2026-08-27","Clayens","Poste via LinkedIn","LI","sans"],
-["2026-08-27","Assystem","Chef de projet ingénierie nucléaire & transformation digitale","SITE","refus","2026-09-08","Poste pourvu"],
-["2026-08-27","Assystem","Ingénieur projet / PMO","SITE","refus","2026-09-03"],
-["2026-08-28","evoteo","Cheffe de projet Data","LI","refus","2026-08-31","Plus approche réseau (recommandation)"],
-["2026-08-30","Qo|Up","Chef de projet informatique","LI","refus","2026-09-02"],
-["2026-08-30","SQLI","Product Owner","LI","sans"],
-["2026-08-31","Shift Consulting","Product Owner","LI","refus","2026-09-03"],
-["2026-08-31","CONSULTYS","PMO junior, région lyonnaise","LI","refus","2026-09-08"],
-["2026-08-31","MIGSO-PCUBED","4 offres PMO / projet","LI","sans","","4 candidatures le même jour"],
-["2026-09-01","MIGSO-PCUBED","3 offres PMO / projet","LI","sans","","3 candidatures (1er et 2 sept.)"],
-["2026-09-01","PIMAN Group","Chef de projet","LI","refus","2026-09-17"],
-["2026-09-05","Artelia","Cheffe de projet ingénierie industrielle","SITE","refus","2026-09-08"],
-["2026-09-05","PRIME ENGINEERING","Poste via LinkedIn","LI","sans"],
-["2026-09-05","VINCI Energies (TG Concept)","Chef de projets","SITE","attente"],
-["2026-09-05","Flatpay","BI Analyst","SITE","refus","2026-09-22"],
-["2026-09-06","Assystem","Business Consultant PLM","SITE","entretien","2026-09-18","Rattaché au processus Assystem"],
-["2026-09-06","Tech'Orléans","Cheffe de projet IA (Boost AI)","DIR","entretien","2026-09-09","Entretien visio le 9 sept., en attente"],
-["2026-09-07","Cognite","Poste via LinkedIn","LI","attente"],
-["2026-09-08","Assystem","Business Consultant transfo digitale & nucléaire","SITE","entretien","2026-09-18","Rattaché au processus Assystem"],
-["2026-09-08","MIGSO-PCUBED","4 offres PMO / projet","LI","attente","","3 le 8 sept., 1 le 9 sept."],
-["2026-09-09","EFOR","Poste via LinkedIn","LI","attente"],
-["2026-09-09","Le Mouton à 5 pattes","Responsable de projet","LI","attente","","Sans nouvelles sous 2 semaines, selon le cabinet, cela vaut refus"],
-["2026-09-09","Framatome","PMO V&V","INT","attente"],
-["2026-09-09","Entreprise non précisée","Ingénieure PMO risques & opportunités","SITE","refus","2026-09-09"],
-["2026-09-10","Devoteam","Poste via LinkedIn","LI","attente"],
-["2026-09-10","Masentó Group","Data, AI, Project Manager","LI","refus","2026-09-13"],
-["2026-09-10","Laboratoires Théa","IS Business Partner","SITE","refus","2026-09-18"],
-["2026-09-10","Upfluence","Data/AI Product Manager","IND","refus","2026-09-11"],
-["2026-09-10","Tenor","Chef de projets ETL","IND","refus","2026-09-11"],
-["2026-09-10","Entreprise non précisée","Product Owner","IND","attente"],
-["2026-09-14","Exakis Nelite","Poste via LinkedIn","LI","attente"],
-["2026-09-14","GCA Groupe Charles André","Poste via LinkedIn","LI","attente"],
-["2026-09-14","mpulse","Consultante PMO IT / transformation digitale","LI","refus","2026-09-21","Vue le 16 sept."],
-["2026-09-14","Néosoft","Chef de projet informatique","LI","refus","2026-09-18"],
-["2026-09-14","PIMAN Group","Responsable de projet industriel","LI","refus","2026-09-22"],
-["2026-09-14","Talan","Chef de projet IT / Product Owner, énergie","SITE","attente","2026-09-22","Via LinkedIn puis site carrière"],
-["2026-09-14","Sopra Steria","Cheffe / Directrice de projet IT, Lyon","SITE","refus","2026-09-15"],
-["2026-09-17","Atos","Consultante transformation digitale","SITE","attente"],
-["2026-09-20","DGA Maîtrise de l'information","Poste ingénieur / experte","SITE","attente","2026-09-21","Habilitation requise"],
-["2026-09-20","Département du Rhône","Chargée de projets IA et Data","SITE","refus","2026-09-22"],
-["2026-09-22","Aubay","Poste via LinkedIn","LI","attente"],
-["2026-09-22","Morgan Philips","Poste via LinkedIn","LI","attente"],
-["2026-09-22","FDC Fabien Drouin Consulting","Poste via LinkedIn","LI","attente","2026-09-22","Vue le jour même"],
-["2026-09-23","Limagrain","AI Transformation Lead","SITE","attente"]
-];
-// Poids : MIGSO regroupé en lignes de plusieurs offres
-const W={"4 offres PMO / projet":4,"3 offres PMO / projet":3};
-const TODAY=new Date("2026-09-23");
-const rows=A.map(([d,e,p,c,s,r,n])=>{
-  let st=s;
-  if(!st){st=(TODAY-new Date(d))/864e5>21?"sans":"attente";}
-  if(st==="attente"&&(TODAY-new Date(d))/864e5>21) st="sans";
-  return {d,e,p,c,s:st,r:r||"",n:n||"",w:W[p]||1};
+const TODAY=new Date(new Date().toISOString().slice(0,10));
+let rows=[];
+fetch("data/candidatures.json",{cache:"no-store"}).then(r=>r.json()).then(data=>{
+const maj=new Date(data.maj);
+document.getElementById("asof").textContent=maj.toLocaleDateString("fr-FR",{day:"numeric",month:"long",year:"numeric"});
+rows=data.candidatures.map(o=>{
+  const age=(TODAY-new Date(o.date))/864e5;
+  let st=o.issue||(age>21?"sans":"attente");
+  if(st==="attente"&&age>21) st="sans";
+  return {d:o.date,e:o.entreprise,p:o.poste,c:o.canal,s:st,r:o.retour||"",n:o.note||"",w:o.nombre||1,i:o.entretiens||0};
 });
+main();
+}).catch(()=>{document.getElementById("kpis").innerHTML='<div class="kpi"><span class="l">Données indisponibles</span><span class="s">Le fichier data/candidatures.json n\'a pas pu être chargé.</span></div>';});
+function main(){
 const LBL={entretien:"Entretien",refus:"Refus",attente:"En attente",sans:"Sans réponse"};
 const ORDER=["entretien","refus","attente","sans"];
 const COL={entretien:"--s-entretien",refus:"--s-refus",attente:"--s-attente",sans:"--s-sans"};
@@ -331,10 +235,10 @@ const sum=(f)=>rows.filter(f).reduce((a,r)=>a+r.w,0);
 // KPI
 const total=sum(()=>true), ref=sum(r=>r.s==="refus"), ent=sum(r=>r.s==="entretien"), att=sum(r=>r.s==="attente"), sans=sum(r=>r.s==="sans");
 const answered=ref+ent;
-const companiesInterview=new Set(rows.filter(r=>r.s==="entretien").map(r=>r.e)).size;
+const withI=rows.filter(r=>r.i>0||r.s==="entretien");const companiesInterview=new Set(withI.map(r=>r.e)).size;const nbI=rows.reduce((a,r)=>a+(r.i||0),0);
 const kp=[
  ["Candidatures envoyées",total,"depuis le 30 janvier",null],
- ["Processus avec entretien",companiesInterview,"Assystem, Tech'Orléans, eXalt. Inetum : refus après échanges","--s-entretien"],
+ ["Entreprises rencontrées en entretien",companiesInterview,nbI+" entretiens au total : "+[...new Set(withI.map(r=>r.e))].join(", "),"--s-entretien"],
  ["Refus reçus",ref,Math.round(ref/total*100)+" % des candidatures","--s-refus"],
  ["En attente",att,"envoyées il y a moins de 3 semaines","--s-attente"],
  ["Sans réponse",sans,"aucune nouvelle après 3 semaines","--s-sans"]
@@ -342,9 +246,14 @@ const kp=[
 document.getElementById("kpis").innerHTML=kp.map(([l,v,s,c])=>`<div class="kpi"><span class="l">${c?`<span class="dot" style="background:var(${c})"></span>`:""}${l}</span><span class="v">${v}</span><span class="s">${s}</span></div>`).join("");
 
 // Month chart
-const MONTHS=["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept."];
-const byM=MONTHS.map((_,i)=>{const o={};ORDER.forEach(k=>o[k]=0);rows.forEach(r=>{if(new Date(r.d).getMonth()===i)o[r.s]+=r.w});return o;});
-document.getElementById("monthNote").textContent=`Septembre : ${ORDER.reduce((a,k)=>a+byM[8][k],0)} candidatures en 3 semaines`;
+const MN=["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."];
+const ym=d=>d.slice(0,7);
+const first=rows.map(r=>r.d).sort()[0].slice(0,7), last=rows.map(r=>r.d).sort().pop().slice(0,7);
+const KEYS=[];for(let [y,m]=first.split("-").map(Number);`${y}-${String(m).padStart(2,"0")}`<=last;m===12?(y++,m=1):m++)KEYS.push(`${y}-${String(m).padStart(2,"0")}`);
+const MONTHS=KEYS.map(k=>MN[+k.slice(5)-1]);
+const byM=KEYS.map(k=>{const o={};ORDER.forEach(s=>o[s]=0);rows.forEach(r=>{if(ym(r.d)===k)o[r.s]+=r.w});return o;});
+const lastTot=ORDER.reduce((a,k)=>a+byM[byM.length-1][k],0);
+document.getElementById("monthNote").textContent=`${MN[+last.slice(5)-1].replace(/^./,c=>c.toUpperCase())} : ${lastTot} candidature${lastTot>1?"s":""}`;
 const tip=document.getElementById("tip");
 function showTip(ev,html){tip.innerHTML=html;tip.hidden=false;const x=Math.min(ev.clientX+14,window.innerWidth-250);tip.style.left=x+"px";tip.style.top=(ev.clientY+14)+"px";}
 function hideTip(){tip.hidden=true;}
@@ -373,7 +282,7 @@ function drawMonth(){
   svg.innerHTML=s;
   svg.querySelectorAll(".hit").forEach(h=>{
     h.addEventListener("mousemove",ev=>{const i=+h.dataset.i,o=byM[i];const tot=ORDER.reduce((a,k)=>a+o[k],0);
-      showTip(ev,`<b>${MONTHS[i]} 2026 : ${tot}</b><br>`+ORDER.map(k=>`${LBL[k]} : ${o[k]}`).join("<br>"));});
+      showTip(ev,`<b>${MONTHS[i]} ${KEYS[i].slice(0,4)} : ${tot}</b><br>`+ORDER.map(k=>`${LBL[k]} : ${o[k]}`).join("<br>"));});
     h.addEventListener("mouseleave",hideTip);
   });
 }
@@ -404,6 +313,7 @@ function render(){
   document.getElementById("tblCount").textContent=`${n} candidature${n>1?"s":""} affichée${n>1?"s":""}`;
 }
 render();
+}
 </script>
 </body>
 </html>
