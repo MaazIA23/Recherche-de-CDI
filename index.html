@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Suivi recherche d'emploi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f3f5f7; --surface:#fcfcfb; --surface-2:#eef1f4;
+  --ink:#122030; --ink-2:#4a5767; --muted:#7c8794;
+  --line:#dde2e8; --line-strong:#c3cad3;
+  --accent:#0e5a6b; --accent-soft:#e0eef1;
+  --s-entretien:#2a78d6; --s-refus:#eb6834; --s-attente:#1baf7a; --s-sans:#b3b9c1;
+  --chip-entretien-bg:#e3eefb; --chip-refus-bg:#fdeae2; --chip-attente-bg:#e1f5ec; --chip-sans-bg:#eceef1;
+  --chip-entretien-fg:#1c5cab; --chip-refus-fg:#a8431b; --chip-attente-fg:#0f7050; --chip-sans-fg:#4a5767;
+  --shadow:0 1px 2px rgba(18,32,48,.06),0 4px 16px rgba(18,32,48,.05);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f141a; --surface:#171d24; --surface-2:#1f2730;
+    --ink:#eef2f6; --ink-2:#b4bec9; --muted:#8793a0;
+    --line:#29323c; --line-strong:#3a4550;
+    --accent:#5fb6c8; --accent-soft:#16323a;
+    --s-entretien:#3987e5; --s-refus:#d95926; --s-attente:#199e70; --s-sans:#56606b;
+    --chip-entretien-bg:#15294a; --chip-refus-bg:#3a2016; --chip-attente-bg:#123328; --chip-sans-bg:#242c35;
+    --chip-entretien-fg:#9ec5f4; --chip-refus-fg:#f3a784; --chip-attente-fg:#7fd9b6; --chip-sans-fg:#b4bec9;
+    --shadow:none; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f141a; --surface:#171d24; --surface-2:#1f2730;
+  --ink:#eef2f6; --ink-2:#b4bec9; --muted:#8793a0;
+  --line:#29323c; --line-strong:#3a4550;
+  --accent:#5fb6c8; --accent-soft:#16323a;
+  --s-entretien:#3987e5; --s-refus:#d95926; --s-attente:#199e70; --s-sans:#56606b;
+  --chip-entretien-bg:#15294a; --chip-refus-bg:#3a2016; --chip-attente-bg:#123328; --chip-sans-bg:#242c35;
+  --chip-entretien-fg:#9ec5f4; --chip-refus-fg:#f3a784; --chip-attente-fg:#7fd9b6; --chip-sans-fg:#b4bec9;
+  --shadow:none; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 "Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px;padding-block:28px 64px;display:grid;gap:28px}
+h1,h2,h3{margin:0;text-wrap:balance}
+h1{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:clamp(28px,4.4vw,40px);line-height:1.1;letter-spacing:-.01em}
+h2{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.muted{color:var(--muted)}
+header{display:grid;gap:10px}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.profile{color:var(--ink-2);max-width:72ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:13px;color:var(--muted)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;box-shadow:var(--shadow)}
+.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 16px 14px;display:grid;gap:2px}
+.kpi .v{font-size:32px;font-weight:700;line-height:1.1;letter-spacing:-.02em}
+.kpi .l{font-size:13px;font-weight:600;color:var(--ink-2)}
+.kpi .s{font-size:12px;color:var(--muted)}
+.kpi .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;align-items:start}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+/* focus process */
+.focus{border-left:4px solid var(--s-entretien)}
+.focus h3{font-size:19px;font-weight:700}
+.focus .role{color:var(--ink-2);margin-top:2px}
+.steps{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:0}
+.steps li{display:grid;grid-template-columns:86px 18px 1fr;gap:10px;align-items:start;padding-bottom:12px;position:relative}
+.steps .d{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:1px}
+.steps .m{width:12px;height:12px;border-radius:50%;background:var(--s-entretien);margin-top:5px;position:relative;z-index:1}
+.steps li:not(:last-child) .m::after{content:"";position:absolute;left:5px;top:12px;width:2px;height:calc(100% + 26px);background:var(--line-strong)}
+.steps li.next .m{background:var(--surface);border:2px solid var(--s-entretien)}
+.steps li.next .t{font-weight:700}
+.steps .t{font-size:14px}
+.agenda{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.agenda li{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.agenda .when{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);min-width:74px;padding-top:2px}
+.agenda .what{font-size:14px}
+.agenda .what b{font-weight:700}
+.agenda .what small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.flag{border-color:#e6c27a}
+/* charts */
+.chart-wrap{overflow-x:auto}
+svg text{font-family:"Public Sans",system-ui,sans-serif}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--ink-2);margin-top:8px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:10px;height:10px;border-radius:2px;display:inline-block}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--surface);font-size:12.5px;line-height:1.45;padding:8px 10px;border-radius:6px;z-index:10;max-width:240px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.bars-h{display:grid;gap:10px}
+.bh{display:grid;grid-template-columns:150px 1fr 40px;gap:10px;align-items:center;font-size:13.5px}
+.bh .track{height:14px;background:var(--surface-2);border-radius:0 4px 4px 0;overflow:hidden}
+.bh .fill{height:100%;background:var(--s-entretien);border-radius:0 4px 4px 0}
+.bh .n{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.bh .sub{grid-column:2 / 4;font-size:12px;color:var(--muted);margin-top:-6px}
+/* table */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.seg{display:inline-flex;border:1px solid var(--line-strong);border-radius:8px;overflow:hidden;flex-wrap:wrap}
+.seg button{font:inherit;font-size:13px;padding:6px 11px;border:0;background:transparent;color:var(--ink-2);cursor:pointer;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+:root[data-theme="dark"] .seg button[aria-pressed="true"]{color:#0f141a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .seg button[aria-pressed="true"]{color:#0f141a}}
+.seg button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+input[type=search],select{font:inherit;font-size:13.5px;padding:6px 10px;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface);color:var(--ink);min-width:0}
+input[type=search]{flex:1 1 200px}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:720px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);position:sticky;top:0}
+tbody tr:last-child td{border-bottom:0}
+td.date{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink-2)}
+td .co{font-weight:600}
+td .note{color:var(--muted);font-size:12.5px;display:block;margin-top:2px}
+.chip{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.c-entretien{background:var(--chip-entretien-bg);color:var(--chip-entretien-fg)}
+.c-refus{background:var(--chip-refus-bg);color:var(--chip-refus-fg)}
+.c-attente{background:var(--chip-attente-bg);color:var(--chip-attente-fg)}
+.c-sans{background:var(--chip-sans-bg);color:var(--chip-sans-fg)}
+.canal{font-size:12.5px;color:var(--ink-2);white-space:nowrap}
+.count{font-size:13px;color:var(--muted)}
+.insights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.insights li{padding:14px;border-radius:8px;background:var(--surface-2);font-size:14px}
+.insights b{display:block;margin-bottom:4px}
+footer{font-size:12.5px;color:var(--muted);max-width:80ch}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.grid2{grid-template-columns:1fr}.insights{grid-template-columns:1fr}}
+@media (max-width:520px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.bh{grid-template-columns:110px 1fr 34px}.steps li{grid-template-columns:70px 18px 1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Point d'étape · au 23 septembre 2026</div>
+    <h1>Recherche d'emploi de Mazidath Bello</h1>
+    <p class="profile">Cheffe de projet Data, IA &amp; transformation digitale. Alternance chez Framatome en fin de parcours, Mastère Artificial Intelligence Management (RNCP 7, soutenance en octobre 2026). Recherche d'un CDI, principalement à Lyon, dans l'énergie, l'industrie et le conseil.</p>
+    <div class="meta"><span>Période couverte : janvier → septembre 2026</span><span>Sources : e-mails de confirmation, de refus et de suivi (LinkedIn, sites carrière, Indeed, contacts directs)</span></div>
+  </header>
+
+  <section class="kpis" id="kpis" aria-label="Chiffres clés"></section>
+
+  <section class="grid2">
+    <div class="panel focus">
+      <div class="sec-head"><h2>Processus le plus avancé</h2><span class="chip c-entretien">4 étapes franchies</span></div>
+      <h3>Assystem · Lyon</h3>
+      <p class="role">Conseil en ingénierie, secteur nucléaire &amp; transformation digitale. Assystem a pris contact après ses candidatures début septembre.</p>
+      <ol class="steps">
+        <li><span class="d">9 sept.</span><span class="m"></span><span class="t">Prise de contact par la chargée de recrutement</span></li>
+        <li><span class="d">10 sept.</span><span class="m"></span><span class="t">Entretien téléphonique</span></li>
+        <li><span class="d">11 sept.</span><span class="m"></span><span class="t">Entretien visio RH</span></li>
+        <li><span class="d">18 sept.</span><span class="m"></span><span class="t">Entretien visio avec une manager, puis références professionnelles transmises le jour même</span></li>
+        <li class="next"><span class="d">7 oct. · 11h</span><span class="m"></span><span class="t">Entretien en agence, Assystem Lyon 7e</span></li>
+      </ol>
+    </div>
+    <div class="panel">
+      <div class="sec-head"><h2>À venir &amp; à relancer</h2></div>
+      <ul class="agenda">
+        <li><span class="when">7 oct.</span><span class="what"><b>Assystem : entretien en agence</b><small>Lyon 7e, 11h. Préparation : projets nucléaire et transformation digitale chez Framatome.</small></span></li>
+        <li><span class="when">Cette sem.</span><span class="what"><b>Tech'Orléans : relancer</b><small>Poste de cheffe de projet IA (programme Boost AI). Entretien visio passé le 9 sept., pas de retour depuis.</small></span></li>
+        <li><span class="when">En cours</span><span class="what"><b>Framatome : 2 pistes internes</b><small>PMO V&amp;V (candidature du 9 sept.) et poste ISM/ITBP EPR2 (CV transmis au manager en mai). À relancer via le réseau interne.</small></span></li>
+        <li class="flag"><span class="when">En cours</span><span class="what"><b>DGA Maîtrise de l'information : dossier complété</b><small>Diplôme et nationalité transmis le 21 sept. Point d'attention : ces postes exigent une habilitation, ce qui peut bloquer pour une candidate de nationalité non française.</small></span></li>
+        <li><span class="when">En attente</span><span class="what"><b>Candidatures récentes sans réponse</b><small>Limagrain (AI Transformation Lead), Talan (Chef de projet IT / PO Énergie), Atos (Consultante transformation digitale), Aubay, Morgan Philips, FDC (candidature vue le 22 sept.).</small></span></li>
+        <li><span class="when">Oct.</span><span class="what"><b>Soutenance du Mastère</b><small>Fin de formation le 23 octobre : disponible pour une prise de poste à partir de fin octobre 2026.</small></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="sec-head"><h2>Candidatures par mois, selon leur issue</h2><span class="count" id="monthNote"></span></div>
+    <div class="chart-wrap"><svg id="monthChart" role="img" aria-label="Histogramme empilé des candidatures par mois" width="100%" height="280"></svg></div>
+    <div class="legend" id="monthLegend"></div>
+  </section>
+
+  <section class="grid2">
+    <div class="panel">
+      <div class="sec-head"><h2>Par canal</h2></div>
+      <div class="bars-h" id="canalBars"></div>
+    </div>
+    <div class="panel">
+      <div class="sec-head"><h2>Ce qu'on en retient</h2></div>
+      <ul class="insights" style="grid-template-columns:1fr">
+        <li><b>Un rythme très soutenu depuis fin août</b>La rentrée concentre l'essentiel des candidatures, avec une cible claire : chef de projet IT / Data / IA, PMO et Product Owner, surtout en ESN et en conseil à Lyon.</li>
+        <li><b>La candidature simplifiée LinkedIn convertit peu</b>Beaucoup de refus automatiques ou de silences. Les échanges réels (Assystem, Tech'Orléans, Inetum, eXalt) viennent de sites carrière, de contacts directs ou d'une prise de contact par le recruteur.</li>
+        <li><b>Des profils juniors ciblés en priorité</b>Plusieurs refus portent sur des postes « confirmé » ou très techniques (architecte data, data engineer). Les postes de pilotage de projet dans le nucléaire et l'énergie restent les plus porteurs.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="sec-head"><h2>Toutes les candidatures</h2><span class="count" id="tblCount"></span></div>
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Filtrer par issue" id="statusSeg"></div>
+      <select id="canalSel" aria-label="Filtrer par canal"></select>
+      <input type="search" id="q" placeholder="Rechercher une entreprise ou un poste" aria-label="Rechercher">
+    </div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Date</th><th>Entreprise · poste</th><th>Canal</th><th>Issue</th><th>Dernier retour</th></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table></div>
+  </section>
+
+  <footer>Méthode : reconstitué à partir de la boîte Gmail (accusés de réception, notifications LinkedIn « candidature envoyée / vue / mise à jour », refus et convocations). « Sans réponse » : aucune nouvelle plus de 3 semaines après l'envoi. Les candidatures faites sans e-mail de confirmation peuvent manquer. Quand la même offre a été envoyée plusieurs fois, elle compte pour une seule candidature, sauf pour MIGSO-PCUBED où les offres étaient distinctes.</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+// d: date d'envoi (AAAA-MM-JJ), e: entreprise, p: poste, c: canal, s: issue (entretien|refus|attente|sans; vide = calculée), r: date du dernier retour, n: note
+const C={LI:"LinkedIn (simplifiée)",SITE:"Site carrière",IND:"Indeed",DIR:"Contact direct / réseau",INT:"Framatome (interne)"};
+const A=[
+["2026-01-30","Capgemini","Cheffe de projet Transformation digitale & IA","LI","refus","2026-02-05"],
+["2026-01-30","Sofyne","Chef·fe de projet IT, Lyon","SITE","refus","2026-02-09"],
+["2026-02-03","Capgemini","Consultante Transformation digitale & IA","LI","refus","2026-02-12"],
+["2026-02-03","Hardis Group","Consultante transformation digitale","SITE","refus","2026-02-09"],
+["2026-02-03","Hardis Group","Candidature spontanée","SITE","refus","2026-02-04"],
+["2026-02-05","wizio.fr","Poste via LinkedIn","LI","sans","2026-02-19","Candidature vue 2 fois"],
+["2026-02-05","Hays (cabinet)","Chef de projet IT, CDI Paris","DIR","sans","","Réponse à une approche du cabinet"],
+["2026-02-06","Akkodis","IT Project Manager","SITE","sans"],
+["2026-02-10","Néosoft","Chef·fe de projet IT, Paris","LI","refus","2026-03-13","Vue le 11 févr."],
+["2026-02-11","Sopra Steria Next","Consultante transformation digitale RH, Toulouse","LI","refus","2026-02-12"],
+["2026-02-12","Blue Soft Empower","Coordinatrice de projet IT","SITE","refus","2026-02-17"],
+["2026-02-12","Solutec","Poste non précisé","SITE","refus","2026-02-15"],
+["2026-02-16","EDF","Cheffe de projet IT confirmée","SITE","refus","2026-02-19"],
+["2026-02-20","Step Up Lyon","Poste non précisé","SITE","refus","2026-02-25"],
+["2026-02-26","Devoteam","PMO IT","LI","refus","2026-03-02"],
+["2026-03-02","Akkodis","Chef de projet IT","SITE","sans"],
+["2026-03-04","École des Mines de Saint-Étienne","Poste via LinkedIn","LI","sans"],
+["2026-03-07","Capgemini","Consultante Transformation digitale & IA","LI","refus","2026-03-12"],
+["2026-03-14","Synchrone","Poste via LinkedIn","LI","sans"],
+["2026-03-16","Inetum","Chef de projet IA → PMO fonctionnel","IND","refus","2026-03-31","Échanges avec le recruteur avant le refus"],
+["2026-03-16","Entreprise non précisée","Chef de projet Data","IND","refus","2026-05-05"],
+["2026-03-16","Framatome","Cheffe de projet Infrastructure","INT","refus","2026-03-25"],
+["2026-03-18","Groupe Valority","Poste non précisé","SITE","refus","2026-03-22"],
+["2026-03-19","Gerflor","Chef de projet Data","IND","refus","2026-03-24"],
+["2026-03-20","E-I","Chef de projet informatique","SITE","refus","2026-03-25"],
+["2026-03-20","Helpline","Chef de projet Data e-commerce","IND","refus","2026-04-21","Poste pourvu"],
+["2026-03-26","Framatome","Data Scientist IA","INT","refus","2026-04-01"],
+["2026-03-27","Sia","Manager AI Transformation, Lyon","LI","refus","2026-04-06","Vue le 2 avr."],
+["2026-03-29","Hospices Civils de Lyon","Cheffe de projet BI / Data","IND","refus","2026-04-09"],
+["2026-03-30","eXalt","Chef de projet IT, Lyon","SITE","entretien","2026-04-09","Entretien visio le 9 avr., pas de suite connue"],
+["2026-04-03","Capgemini","Business Analyst Transformation digitale & IA","DIR","sans","","Cooptation"],
+["2026-04-04","Capgemini","Data Architect","DIR","sans","","Cooptation"],
+["2026-04-04","Capgemini","Data Engineer confirmé","DIR","refus","2026-04-15","Cooptation"],
+["2026-04-04","Capgemini","Architecte Data","DIR","refus","2026-04-15","Cooptation"],
+["2026-04-04","Capgemini","Lead Data Analyst","DIR","sans","","Cooptation"],
+["2026-04-04","Capgemini","Consultante Transformation digitale & IA","DIR","refus","2026-04-16","Cooptation"],
+["2026-04-04","Teolia","Poste via LinkedIn","LI","sans"],
+["2026-04-04","Exakis Nelite","Chef de projet Data IA","LI","refus","2026-05-22"],
+["2026-04-28","Schneider Electric","Poste IA (CSH)","SITE","sans"],
+["2026-05-07","Framatome","Chef de projet international LTSA","INT","refus","2026-05-20","Redirigée vers les offres jeunes diplômés"],
+["2026-05-12","Ministère des Armées (numérique)","Candidature spontanée","DIR","sans","2026-05-28","Accusé de réception seulement"],
+["2026-05-19","Framatome","ISM / IT Business Partner EPR2","INT","sans","2026-05-19","Cooptation interne, CV transmis au manager EPR2 : à relancer"],
+["2026-06-10","Wavestone","Consultante junior Data/IA, Lyon","DIR","refus","2026-06-24","Recommandée par une salariée"],
+["2026-06-15","E-I","Chef de projet informatique","SITE","refus","2026-06-23"],
+["2026-06-15","Step Up Lyon","Chef de projet déploiement & conduite du changement","SITE","refus","2026-06-25","Poste pourvu"],
+["2026-06-24","Alteca","Chef de projet IT","LI","refus","2026-06-30","Vue le 24 juin"],
+["2026-06-29","Assurance Maladie (CNAM)","Chef de projet / Business Analyst IA","SITE","sans"],
+["2026-07-06","ALTHEA","Data Analyst","LI","refus","2026-07-10","Vue le 7 juil."],
+["2026-07-06","Winside Technology","Chef de projet IT / Business Analyst","LI","refus","2026-07-10"],
+["2026-07-06","Groupe LR Technologies","Poste via LinkedIn","LI","sans"],
+["2026-08-20","Groupe hospitalier Diaconesses Croix Saint-Simon","Poste via LinkedIn","LI","sans"],
+["2026-08-20","ACSSI","Product Owner Industrie","LI","refus","2026-09-11","Vue le 21 août"],
+["2026-08-20","Néosoft","Poste via LinkedIn","LI","sans"],
+["2026-08-20","Niji","Manager Data & IA","SITE","refus","2026-09-08"],
+["2026-08-20","Assystem","Product Owner","SITE","entretien","2026-09-18","A ouvert le processus Assystem"],
+["2026-08-21","Hygie31","Cheffe de projet IT / transformation digitale","LI","refus","2026-09-08","Vue le 21 août"],
+["2026-08-25","Sia","Manager AI Transformation, Lyon","LI","refus","2026-09-03"],
+["2026-08-27","Clayens","Poste via LinkedIn","LI","sans"],
+["2026-08-27","Assystem","Chef de projet ingénierie nucléaire & transformation digitale","SITE","refus","2026-09-08","Poste pourvu"],
+["2026-08-27","Assystem","Ingénieur projet / PMO","SITE","refus","2026-09-03"],
+["2026-08-28","evoteo","Cheffe de projet Data","LI","refus","2026-08-31","Plus approche réseau (recommandation)"],
+["2026-08-30","Qo|Up","Chef de projet informatique","LI","refus","2026-09-02"],
+["2026-08-30","SQLI","Product Owner","LI","sans"],
+["2026-08-31","Shift Consulting","Product Owner","LI","refus","2026-09-03"],
+["2026-08-31","CONSULTYS","PMO junior, région lyonnaise","LI","refus","2026-09-08"],
+["2026-08-31","MIGSO-PCUBED","4 offres PMO / projet","LI","sans","","4 candidatures le même jour"],
+["2026-09-01","MIGSO-PCUBED","3 offres PMO / projet","LI","sans","","3 candidatures (1er et 2 sept.)"],
+["2026-09-01","PIMAN Group","Chef de projet","LI","refus","2026-09-17"],
+["2026-09-05","Artelia","Cheffe de projet ingénierie industrielle","SITE","refus","2026-09-08"],
+["2026-09-05","PRIME ENGINEERING","Poste via LinkedIn","LI","sans"],
+["2026-09-05","VINCI Energies (TG Concept)","Chef de projets","SITE","attente"],
+["2026-09-05","Flatpay","BI Analyst","SITE","refus","2026-09-22"],
+["2026-09-06","Assystem","Business Consultant PLM","SITE","entretien","2026-09-18","Rattaché au processus Assystem"],
+["2026-09-06","Tech'Orléans","Cheffe de projet IA (Boost AI)","DIR","entretien","2026-09-09","Entretien visio le 9 sept., en attente"],
+["2026-09-07","Cognite","Poste via LinkedIn","LI","attente"],
+["2026-09-08","Assystem","Business Consultant transfo digitale & nucléaire","SITE","entretien","2026-09-18","Rattaché au processus Assystem"],
+["2026-09-08","MIGSO-PCUBED","4 offres PMO / projet","LI","attente","","3 le 8 sept., 1 le 9 sept."],
+["2026-09-09","EFOR","Poste via LinkedIn","LI","attente"],
+["2026-09-09","Le Mouton à 5 pattes","Responsable de projet","LI","attente","","Sans nouvelles sous 2 semaines, selon le cabinet, cela vaut refus"],
+["2026-09-09","Framatome","PMO V&V","INT","attente"],
+["2026-09-09","Entreprise non précisée","Ingénieure PMO risques & opportunités","SITE","refus","2026-09-09"],
+["2026-09-10","Devoteam","Poste via LinkedIn","LI","attente"],
+["2026-09-10","Masentó Group","Data, AI, Project Manager","LI","refus","2026-09-13"],
+["2026-09-10","Laboratoires Théa","IS Business Partner","SITE","refus","2026-09-18"],
+["2026-09-10","Upfluence","Data/AI Product Manager","IND","refus","2026-09-11"],
+["2026-09-10","Tenor","Chef de projets ETL","IND","refus","2026-09-11"],
+["2026-09-10","Entreprise non précisée","Product Owner","IND","attente"],
+["2026-09-14","Exakis Nelite","Poste via LinkedIn","LI","attente"],
+["2026-09-14","GCA Groupe Charles André","Poste via LinkedIn","LI","attente"],
+["2026-09-14","mpulse","Consultante PMO IT / transformation digitale","LI","refus","2026-09-21","Vue le 16 sept."],
+["2026-09-14","Néosoft","Chef de projet informatique","LI","refus","2026-09-18"],
+["2026-09-14","PIMAN Group","Responsable de projet industriel","LI","refus","2026-09-22"],
+["2026-09-14","Talan","Chef de projet IT / Product Owner, énergie","SITE","attente","2026-09-22","Via LinkedIn puis site carrière"],
+["2026-09-14","Sopra Steria","Cheffe / Directrice de projet IT, Lyon","SITE","refus","2026-09-15"],
+["2026-09-17","Atos","Consultante transformation digitale","SITE","attente"],
+["2026-09-20","DGA Maîtrise de l'information","Poste ingénieur / experte","SITE","attente","2026-09-21","Habilitation requise"],
+["2026-09-20","Département du Rhône","Chargée de projets IA et Data","SITE","refus","2026-09-22"],
+["2026-09-22","Aubay","Poste via LinkedIn","LI","attente"],
+["2026-09-22","Morgan Philips","Poste via LinkedIn","LI","attente"],
+["2026-09-22","FDC Fabien Drouin Consulting","Poste via LinkedIn","LI","attente","2026-09-22","Vue le jour même"],
+["2026-09-23","Limagrain","AI Transformation Lead","SITE","attente"]
+];
+// Poids : MIGSO regroupé en lignes de plusieurs offres
+const W={"4 offres PMO / projet":4,"3 offres PMO / projet":3};
+const TODAY=new Date("2026-09-23");
+const rows=A.map(([d,e,p,c,s,r,n])=>{
+  let st=s;
+  if(!st){st=(TODAY-new Date(d))/864e5>21?"sans":"attente";}
+  if(st==="attente"&&(TODAY-new Date(d))/864e5>21) st="sans";
+  return {d,e,p,c,s:st,r:r||"",n:n||"",w:W[p]||1};
+});
+const LBL={entretien:"Entretien",refus:"Refus",attente:"En attente",sans:"Sans réponse"};
+const ORDER=["entretien","refus","attente","sans"];
+const COL={entretien:"--s-entretien",refus:"--s-refus",attente:"--s-attente",sans:"--s-sans"};
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const fmt=d=>{if(!d)return"";const x=new Date(d);return x.toLocaleDateString("fr-FR",{day:"numeric",month:"short"});};
+const sum=(f)=>rows.filter(f).reduce((a,r)=>a+r.w,0);
+
+// KPI
+const total=sum(()=>true), ref=sum(r=>r.s==="refus"), ent=sum(r=>r.s==="entretien"), att=sum(r=>r.s==="attente"), sans=sum(r=>r.s==="sans");
+const answered=ref+ent;
+const companiesInterview=new Set(rows.filter(r=>r.s==="entretien").map(r=>r.e)).size;
+const kp=[
+ ["Candidatures envoyées",total,"depuis le 30 janvier",null],
+ ["Processus avec entretien",companiesInterview,"Assystem, Tech'Orléans, eXalt. Inetum : refus après échanges","--s-entretien"],
+ ["Refus reçus",ref,Math.round(ref/total*100)+" % des candidatures","--s-refus"],
+ ["En attente",att,"envoyées il y a moins de 3 semaines","--s-attente"],
+ ["Sans réponse",sans,"aucune nouvelle après 3 semaines","--s-sans"]
+];
+document.getElementById("kpis").innerHTML=kp.map(([l,v,s,c])=>`<div class="kpi"><span class="l">${c?`<span class="dot" style="background:var(${c})"></span>`:""}${l}</span><span class="v">${v}</span><span class="s">${s}</span></div>`).join("");
+
+// Month chart
+const MONTHS=["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept."];
+const byM=MONTHS.map((_,i)=>{const o={};ORDER.forEach(k=>o[k]=0);rows.forEach(r=>{if(new Date(r.d).getMonth()===i)o[r.s]+=r.w});return o;});
+document.getElementById("monthNote").textContent=`Septembre : ${ORDER.reduce((a,k)=>a+byM[8][k],0)} candidatures en 3 semaines`;
+const tip=document.getElementById("tip");
+function showTip(ev,html){tip.innerHTML=html;tip.hidden=false;const x=Math.min(ev.clientX+14,window.innerWidth-250);tip.style.left=x+"px";tip.style.top=(ev.clientY+14)+"px";}
+function hideTip(){tip.hidden=true;}
+function drawMonth(){
+  const svg=document.getElementById("monthChart");const W0=Math.max(svg.clientWidth,520),H=280,m={t:14,r:8,b:30,l:34};
+  svg.setAttribute("viewBox",`0 0 ${W0} ${H}`);
+  const max=Math.max(...byM.map(o=>ORDER.reduce((a,k)=>a+o[k],0)));const top=Math.ceil(max/10)*10;
+  const iw=W0-m.l-m.r, ih=H-m.t-m.b, bw=iw/MONTHS.length, barW=Math.min(46,bw*0.62);
+  const y=v=>m.t+ih-(v/top)*ih;
+  let s="";
+  for(let v=0;v<=top;v+=10){s+=`<line x1="${m.l}" x2="${W0-m.r}" y1="${y(v)}" y2="${y(v)}" stroke="${v===0?css("--line-strong"):css("--line")}" stroke-width="1"/><text x="${m.l-8}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="${css("--muted")}" style="font-variant-numeric:tabular-nums">${v}</text>`;}
+  byM.forEach((o,i)=>{
+    const cx=m.l+bw*i+bw/2, x=cx-barW/2; let acc=0; const tot=ORDER.reduce((a,k)=>a+o[k],0);
+    const segs=ORDER.filter(k=>o[k]>0);
+    segs.forEach((k,j)=>{
+      const y1=y(acc+o[k]), y0=y(acc); const isTop=j===segs.length-1;
+      const h=Math.max(0,y0-y1-(j>0?2:0)); const yy=y1;
+      if(isTop){const r=Math.min(4,h);s+=`<path d="M${x},${yy+h} L${x},${yy+r} Q${x},${yy} ${x+r},${yy} L${x+barW-r},${yy} Q${x+barW},${yy} ${x+barW},${yy+r} L${x+barW},${yy+h} Z" fill="${css(COL[k])}"/>`;}
+      else s+=`<rect x="${x}" y="${yy}" width="${barW}" height="${h}" fill="${css(COL[k])}"/>`;
+      acc+=o[k];
+    });
+    if(tot) s+=`<text x="${cx}" y="${y(tot)-6}" text-anchor="middle" font-size="11.5" font-weight="600" fill="${css("--ink-2")}">${tot}</text>`;
+    s+=`<text x="${cx}" y="${H-10}" text-anchor="middle" font-size="12" fill="${css("--muted")}">${MONTHS[i]}</text>`;
+    s+=`<rect class="hit" data-i="${i}" x="${m.l+bw*i}" y="${m.t}" width="${bw}" height="${ih}" fill="transparent"/>`;
+  });
+  svg.innerHTML=s;
+  svg.querySelectorAll(".hit").forEach(h=>{
+    h.addEventListener("mousemove",ev=>{const i=+h.dataset.i,o=byM[i];const tot=ORDER.reduce((a,k)=>a+o[k],0);
+      showTip(ev,`<b>${MONTHS[i]} 2026 : ${tot}</b><br>`+ORDER.map(k=>`${LBL[k]} : ${o[k]}`).join("<br>"));});
+    h.addEventListener("mouseleave",hideTip);
+  });
+}
+document.getElementById("monthLegend").innerHTML=ORDER.map(k=>`<span><i class="sw" style="background:var(${COL[k]})"></i>${LBL[k]}</span>`).join("");
+drawMonth(); addEventListener("resize",drawMonth);
+matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",drawMonth);
+new MutationObserver(drawMonth).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+
+// Canal bars
+const canals=Object.keys(C).map(k=>{const rs=rows.filter(r=>r.c===k);const n=rs.reduce((a,r)=>a+r.w,0);const e=rs.filter(r=>r.s==="entretien").reduce((a,r)=>a+r.w,0);const f=rs.filter(r=>r.s==="refus").reduce((a,r)=>a+r.w,0);return {k,n,e,f};}).sort((a,b)=>b.n-a.n);
+const cmax=Math.max(...canals.map(c=>c.n));
+document.getElementById("canalBars").innerHTML=canals.map(c=>`<div class="bh"><span>${C[c.k]}</span><span class="track"><span class="fill" style="display:block;width:${c.n/cmax*100}%"></span></span><span class="n">${c.n}</span><span class="sub">${c.e} avec entretien · ${c.f} refus</span></div>`).join("");
+
+// Table
+let fS="all",fC="all",q="";
+const seg=document.getElementById("statusSeg");
+const segOpts=[["all","Toutes"],...ORDER.map(k=>[k,LBL[k]])];
+seg.innerHTML=segOpts.map(([k,l])=>`<button type="button" id="f-${k}" data-k="${k}" aria-pressed="${k==="all"}">${l}</button>`).join("");
+seg.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;fS=b.dataset.k;seg.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));render();});
+const sel=document.getElementById("canalSel");
+sel.innerHTML=`<option value="all">Tous les canaux</option>`+Object.entries(C).map(([k,l])=>`<option value="${k}">${l}</option>`).join("");
+sel.addEventListener("change",()=>{fC=sel.value;render();});
+document.getElementById("q").addEventListener("input",e=>{q=e.target.value.toLowerCase();render();});
+function render(){
+  const list=rows.filter(r=>(fS==="all"||r.s===fS)&&(fC==="all"||r.c===fC)&&(!q||(r.e+" "+r.p).toLowerCase().includes(q))).sort((a,b)=>b.d.localeCompare(a.d));
+  document.getElementById("tbody").innerHTML=list.map(r=>`<tr><td class="date">${fmt(r.d)}</td><td><span class="co">${r.e}</span> · ${r.p}${r.n?`<span class="note">${r.n}</span>`:""}</td><td class="canal">${C[r.c]}</td><td><span class="chip c-${r.s}">${LBL[r.s]}</span></td><td class="date">${fmt(r.r)}</td></tr>`).join("")||`<tr><td colspan="5" class="muted">Aucune candidature ne correspond à ces filtres.</td></tr>`;
+  const n=list.reduce((a,r)=>a+r.w,0);
+  document.getElementById("tblCount").textContent=`${n} candidature${n>1?"s":""} affichée${n>1?"s":""}`;
+}
+render();
+</script>
+</body>
+</html>
