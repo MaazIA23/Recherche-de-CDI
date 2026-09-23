@@ -495,10 +495,9 @@
    "entreprise": "Assystem",
    "poste": "Product Owner",
    "canal": "SITE",
-   "issue": "entretien",
-   "retour": "2026-09-18",
-   "note": "A ouvert le processus Assystem",
-   "entretiens": 4
+   "issue": "",
+   "retour": "",
+   "note": "Pas d'entretien dédié : le processus s'est engagé sur le poste Business Consultant"
   },
   {
    "date": "2026-08-21",
@@ -660,9 +659,9 @@
    "entreprise": "Assystem",
    "poste": "Business Consultant PLM",
    "canal": "SITE",
-   "issue": "entretien",
-   "retour": "2026-09-18",
-   "note": "Rattaché au processus Assystem"
+   "issue": "",
+   "retour": "",
+   "note": "Pas d'entretien dédié : le processus s'est engagé sur le poste Business Consultant"
   },
   {
    "date": "2026-09-06",
@@ -686,11 +685,12 @@
   {
    "date": "2026-09-08",
    "entreprise": "Assystem",
-   "poste": "Business Consultant transfo digitale & nucléaire",
+   "poste": "Business Consultant transformation digitale & nucléaire",
    "canal": "SITE",
    "issue": "entretien",
    "retour": "2026-09-18",
-   "note": "Rattaché au processus Assystem"
+   "note": "Échange téléphonique de 15 min (10 sept.), entretien RH d'1 h (11 sept.), entretien technique avec le futur manager (18 sept.). Prochain entretien le 7 oct.",
+   "entretiens": 3
   },
   {
    "date": "2026-09-08",
