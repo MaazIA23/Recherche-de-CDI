@@ -126,6 +126,29 @@ td .note{color:var(--muted);font-size:12.5px;display:block;margin-top:2px}
 .insights b{display:block;margin-bottom:4px}
 footer{font-size:12.5px;color:var(--muted);max-width:80ch}
 @media (max-width:900px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.grid2{grid-template-columns:1fr}.insights{grid-template-columns:1fr}}
+.wrap>*,.grid2>*,.kpis>*{min-width:0}
+.bh>span:first-child{overflow-wrap:anywhere}
+@media (max-width:640px){
+  .wrap{padding-inline:16px;gap:20px}
+  .panel{padding:16px}
+  .tbl-wrap{border:0;overflow:visible}
+  table{min-width:0}
+  thead{display:none}
+  tbody,tr,td{display:block}
+  tbody{display:grid;gap:10px}
+  tr{border:1px solid var(--line);border-radius:8px;padding:10px 12px;display:grid;grid-template-columns:1fr auto;gap:4px 10px;background:var(--surface)}
+  td{border:0;padding:0}
+  td:nth-child(2){grid-column:1 / -1;order:-1}
+  td.date:first-child::before{content:"Envoyée le "}
+  td:nth-child(3){grid-column:1 / -1}
+  td:nth-child(4){grid-row:2;grid-column:2}
+  td:last-child:not(:empty)::before{content:"Dernier retour : "}
+  td:last-child:empty{display:none}
+  .seg{width:100%}
+  .seg button{flex:1 1 auto}
+  select,input[type=search]{flex:1 1 100%}
+  .agenda li{grid-template-columns:1fr;gap:4px}
+}
 @media (max-width:520px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.bh{grid-template-columns:110px 1fr 34px}.steps li{grid-template-columns:70px 18px 1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -292,9 +315,9 @@ matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",drawMonth
 new MutationObserver(drawMonth).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 
 // Canal bars
-const canals=Object.keys(C).map(k=>{const rs=rows.filter(r=>r.c===k);const n=rs.reduce((a,r)=>a+r.w,0);const e=rs.filter(r=>r.s==="entretien").reduce((a,r)=>a+r.w,0);const f=rs.filter(r=>r.s==="refus").reduce((a,r)=>a+r.w,0);return {k,n,e,f};}).sort((a,b)=>b.n-a.n);
+const canals=Object.keys(C).map(k=>{const rs=rows.filter(r=>r.c===k);const n=rs.reduce((a,r)=>a+r.w,0);const e=rs.filter(r=>r.i>0||r.s==="entretien").reduce((a,r)=>a+r.w,0);const ni=rs.reduce((a,r)=>a+(r.i||0),0);const f=rs.filter(r=>r.s==="refus").reduce((a,r)=>a+r.w,0);return {k,n,e,f,ni};}).sort((a,b)=>b.n-a.n);
 const cmax=Math.max(...canals.map(c=>c.n));
-document.getElementById("canalBars").innerHTML=canals.map(c=>`<div class="bh"><span>${C[c.k]}</span><span class="track"><span class="fill" style="display:block;width:${c.n/cmax*100}%"></span></span><span class="n">${c.n}</span><span class="sub">${c.e} avec entretien · ${c.f} refus</span></div>`).join("");
+document.getElementById("canalBars").innerHTML=canals.map(c=>`<div class="bh"><span>${C[c.k]}</span><span class="track"><span class="fill" style="display:block;width:${c.n/cmax*100}%"></span></span><span class="n">${c.n}</span><span class="sub">${c.e} avec entretien${c.ni>c.e?` (${c.ni} entretiens)`:""} · ${c.f} refus</span></div>`).join("");
 
 // Table
 let fS="all",fC="all",q="";
