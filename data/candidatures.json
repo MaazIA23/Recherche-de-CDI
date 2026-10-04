@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-01",
+ "maj": "2026-10-04",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -948,10 +948,10 @@
   {
    "date": "2026-09-30",
    "entreprise": "Institut Français d'Intelligence Artificielle",
-   "poste": "Poste via LinkedIn",
+   "poste": "Responsable de projet IA Industrie",
    "canal": "LI",
-   "issue": "",
-   "retour": "",
+   "issue": "refus",
+   "retour": "2026-10-03",
    "note": ""
   }
  ]
