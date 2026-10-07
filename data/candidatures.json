@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-04",
+ "maj": "2026-10-07",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -869,9 +869,9 @@
    "entreprise": "DGA Maîtrise de l'information",
    "poste": "Poste ingénieur / experte",
    "canal": "SITE",
-   "issue": "attente",
-   "retour": "2026-09-21",
-   "note": "Habilitation requise"
+   "issue": "refus",
+   "retour": "2026-10-06",
+   "note": "Habilitation requise · refus après analyse par les experts techniques"
   },
   {
    "date": "2026-09-20",
