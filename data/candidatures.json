@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-07",
+ "maj": "2026-10-08",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -860,9 +860,9 @@
    "entreprise": "Atos",
    "poste": "Consultante transformation digitale",
    "canal": "SITE",
-   "issue": "attente",
-   "retour": "",
-   "note": ""
+   "issue": "refus",
+   "retour": "2026-10-08",
+   "note": "Réf. 540279"
   },
   {
    "date": "2026-09-20",
