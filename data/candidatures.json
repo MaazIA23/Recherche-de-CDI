@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-08",
+ "maj": "2026-10-09",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -939,11 +939,11 @@
   {
    "date": "2026-09-30",
    "entreprise": "umake",
-   "poste": "Poste via LinkedIn",
+   "poste": "Chef de projet IA/Data",
    "canal": "LI",
-   "issue": "",
-   "retour": "",
-   "note": ""
+   "issue": "refus",
+   "retour": "2026-10-09",
+   "note": "Candidature vue le 09/10"
   },
   {
    "date": "2026-09-30",
@@ -952,6 +952,33 @@
    "canal": "LI",
    "issue": "refus",
    "retour": "2026-10-03",
+   "note": ""
+  },
+  {
+   "date": "2026-10-09",
+   "entreprise": "NGTV Experience (SPASH)",
+   "poste": "Product Owner",
+   "canal": "IND",
+   "issue": "refus",
+   "retour": "2026-10-09",
+   "note": "Date d'envoi inconnue"
+  },
+  {
+   "date": "2026-10-09",
+   "entreprise": "In-Genium",
+   "poste": "Business Manager – Ingénieur d'affaires, Lyon",
+   "canal": "LI",
+   "issue": "",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-10-09",
+   "entreprise": "Hays",
+   "poste": "Business developer Retail & Data, Lyon",
+   "canal": "LI",
+   "issue": "",
+   "retour": "",
    "note": ""
   }
  ]
