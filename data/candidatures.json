@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-14",
+ "maj": "2026-10-15",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -567,8 +567,8 @@
    "entreprise": "SQLI",
    "poste": "Product Owner",
    "canal": "LI",
-   "issue": "sans",
-   "retour": "",
+   "issue": "refus",
+   "retour": "2026-10-15",
    "note": ""
   },
   {
@@ -989,6 +989,52 @@
    "issue": "",
    "retour": "",
    "note": "CV et lettre adaptés, envoyés à contact@nexen-software.com · 36 k€ + variable"
+  },
+  {
+   "date": "2026-10-15",
+   "entreprise": "MIGSO-PCUBED",
+   "poste": "Ingénieur PMO (Lyon et Chambéry)",
+   "canal": "LI",
+   "issue": "",
+   "retour": "",
+   "note": "",
+   "nombre": 2
+  },
+  {
+   "date": "2026-10-15",
+   "entreprise": "Capgemini",
+   "poste": "Consultante transformation digitale et IA senior, Aix-en-Provence",
+   "canal": "LI",
+   "issue": "",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-10-15",
+   "entreprise": "MPG Partners",
+   "poste": "Chef de projet Data Office – Gouvernance & catalogues de données, Paris",
+   "canal": "LI",
+   "issue": "",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-10-15",
+   "entreprise": "Néosoft",
+   "poste": "Chef de projet MOA Finance / IA, Paris",
+   "canal": "LI",
+   "issue": "",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-10-15",
+   "entreprise": "Morgan Philips",
+   "poste": "Chef de projet Transformation digitale & IA, Levallois-Perret",
+   "canal": "LI",
+   "issue": "",
+   "retour": "",
+   "note": ""
   }
  ]
 }
