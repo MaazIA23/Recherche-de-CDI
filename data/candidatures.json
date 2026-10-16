@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-15",
+ "maj": "2026-10-16",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -1035,6 +1035,25 @@
    "issue": "",
    "retour": "",
    "note": ""
+  },
+  {
+   "date": "2026-10-16",
+   "entreprise": "EDF – DirIN / DSIN",
+   "poste": "Poste à préciser (Direction Standards Intégration et Numérique)",
+   "canal": "DIR",
+   "issue": "entretien",
+   "retour": "2026-10-16",
+   "entretiens": 2,
+   "note": "Convocation reçue le 16/10 (Sheherazade Yahiaoui). Mer. 21/10 sur site à Park Azur, Montrouge : 13h-13h55 avec Hervé Schwerer, puis 14h-14h55 avec Catherine Pezzali et Frédéric Goux"
+  },
+  {
+   "date": "2026-10-16",
+   "entreprise": "Visiativ",
+   "poste": "Alternance Cheffe de projet IA (janvier 2027), Charbonnières-les-Bains",
+   "canal": "DIR",
+   "issue": "",
+   "retour": "",
+   "note": "Envoyée au DSI, Maxime Duprez · CV et lettre adaptés"
   }
  ]
 }
