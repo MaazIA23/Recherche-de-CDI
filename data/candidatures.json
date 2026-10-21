@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-19",
+ "maj": "2026-10-21",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -1005,8 +1005,8 @@
    "entreprise": "Capgemini",
    "poste": "Consultante transformation digitale et IA senior, Aix-en-Provence",
    "canal": "LI",
-   "issue": "",
-   "retour": "",
+   "issue": "refus",
+   "retour": "2026-10-21",
    "note": ""
   },
   {
