@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-21",
+ "maj": "2026-10-22",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -1054,6 +1054,42 @@
    "issue": "",
    "retour": "",
    "note": "Envoyée au DSI, Maxime Duprez · CV et lettre adaptés"
+  },
+  {
+   "date": "2026-10-22",
+   "entreprise": "The Progress Factory",
+   "poste": "Alternance Transformation digitale & adoption de l'IA, Lyon",
+   "canal": "LI",
+   "issue": "",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-10-22",
+   "entreprise": "PIMAN Group",
+   "poste": "Alternance AI Expert Junior, Limonest",
+   "canal": "LI",
+   "issue": "",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-10-22",
+   "entreprise": "Carrefour",
+   "poste": "Alternance IA et Excellence opérationnelle & digitale e-commerce",
+   "canal": "SITE",
+   "issue": "",
+   "retour": "",
+   "note": ""
+  },
+  {
+   "date": "2026-10-22",
+   "entreprise": "AGATHA",
+   "poste": "Alternance Cheffe de projet CRM & Expérience client (janvier 2027)",
+   "canal": "SITE",
+   "issue": "",
+   "retour": "",
+   "note": "Via HelloWork / Taleez"
   }
  ]
 }
