@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-27",
+ "maj": "2026-10-28",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -1098,7 +1098,7 @@
    "canal": "INT",
    "issue": "",
    "retour": "",
-   "note": "Proposé par Jérôme Lacosse (Chief AI Officer) le 26/10 : acculturation, PMO (COPIL IA, budgets, communautés), support build & run GenAI. CV ciblé envoyé le 26/10. Échange à planifier."
+   "note": "Proposé par Jérôme Lacosse (Chief AI Officer) le 26/10 : acculturation, PMO (COPIL IA, budgets, communautés), support build & run GenAI. CV ciblé envoyé le 26/10. Échange à planifier. 28/10 : Jérôme Lacosse a transmis le CV à une ESN."
   },
   {
    "date": "2026-10-27",
@@ -1126,6 +1126,16 @@
    "issue": "",
    "retour": "",
    "note": "CV transmis à Pierre-Emmanuel Vincent, comme convenu"
+  },
+  {
+   "date": "2026-10-28",
+   "entreprise": "Talan",
+   "poste": "Product Owner Data & IA (CDI)",
+   "canal": "DIR",
+   "issue": "entretien",
+   "retour": "2026-10-28",
+   "entretiens": 1,
+   "note": "Recommandée par Kévin Laurent (ingénieur d'affaires). Échange téléphonique le 28/10 avec Morgane Prioux (RH). Entretien visio Teams le jeudi 29/10 à 10h30 avec Kévin Laurent et Morgane Prioux."
   }
  ]
 }
