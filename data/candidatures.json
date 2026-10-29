@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-28",
+ "maj": "2026-10-29",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -1114,9 +1114,9 @@
    "entreprise": "La Française",
    "poste": "Alternance Chargée de projet Intelligence Artificielle",
    "canal": "SITE",
-   "issue": "",
-   "retour": "",
-   "note": "Accusé de réception le 27/10 : dossier en cours d'étude"
+   "issue": "refus",
+   "retour": "2026-10-29",
+   "note": "Accusé de réception le 27/10 : dossier en cours d'étude · Refus le 29/10"
   },
   {
    "date": "2026-10-27",
@@ -1133,9 +1133,9 @@
    "poste": "Product Owner Data & IA (CDI)",
    "canal": "DIR",
    "issue": "entretien",
-   "retour": "2026-10-28",
-   "entretiens": 1,
-   "note": "Recommandée par Kévin Laurent (ingénieur d'affaires). Échange téléphonique le 28/10 avec Morgane Prioux (RH). Entretien visio Teams le jeudi 29/10 à 10h30 avec Kévin Laurent et Morgane Prioux."
+   "retour": "2026-10-29",
+   "entretiens": 2,
+   "note": "Recommandée par Kévin Laurent (ingénieur d'affaires). Échange téléphonique le 28/10 avec Morgane Prioux (RH). Entretien visio le 29/10 avec Kévin Laurent et Morgane Prioux : très bon ressenti. Prochaine étape : entretien avec Margot Rivière (manager équipe Data), créneaux proposés du 2 au 4/11, en présentiel à Villeurbanne. Créneau à confirmer."
   }
  ]
 }
