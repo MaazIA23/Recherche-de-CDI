@@ -1,5 +1,5 @@
 {
- "maj": "2026-10-30",
+ "maj": "2026-11-04",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -889,7 +889,7 @@
    "canal": "LI",
    "issue": "attente",
    "retour": "",
-   "note": ""
+   "note": "Candidature vue le 03/11"
   },
   {
    "date": "2026-09-22",
@@ -1087,9 +1087,9 @@
    "entreprise": "AGATHA",
    "poste": "Alternance Cheffe de projet CRM & Expérience client (janvier 2027)",
    "canal": "SITE",
-   "issue": "",
-   "retour": "",
-   "note": "Via HelloWork / Taleez"
+   "issue": "refus",
+   "retour": "2026-11-04",
+   "note": "Via HelloWork / Taleez · Refus le 04/11 : poste pourvu"
   },
   {
    "date": "2026-10-26",
