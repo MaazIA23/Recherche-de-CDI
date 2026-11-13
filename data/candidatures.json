@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-12",
+ "maj": "2026-11-13",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -1051,9 +1051,9 @@
    "entreprise": "Visiativ",
    "poste": "Alternance Cheffe de projet IA (janvier 2027), Charbonnières-les-Bains",
    "canal": "DIR",
-   "issue": "",
-   "retour": "",
-   "note": "Envoyée au DSI, Maxime Duprez · CV et lettre adaptés · Relance envoyée le 27/10"
+   "issue": "refus",
+   "retour": "2026-11-13",
+   "note": "Envoyée au DSI, Maxime Duprez · CV et lettre adaptés · Relance envoyée le 27/10 · Refus le 13/11"
   },
   {
    "date": "2026-10-22",
@@ -1133,9 +1133,18 @@
    "poste": "Product Owner Data & IA (CDI)",
    "canal": "DIR",
    "issue": "entretien",
-   "retour": "2026-11-06",
+   "retour": "2026-11-13",
    "entretiens": 3,
-   "note": "Recommandée par Kévin Laurent (ingénieur d'affaires). Échange téléphonique le 28/10 avec Morgane Prioux (RH). Entretien visio le 29/10 avec Kévin Laurent et Morgane Prioux : très bon ressenti. Entretien le 2/11 en présentiel avec Margot Rivière (manager équipe Data Analytics) : très bon retour. 06/11 : en attente de la confirmation du projet par le client, puis rencontre prévue avec Vincent Penot (responsable Data & IA). 12/11 : relance envoyée à Morgane Prioux."
+   "note": "Recommandée par Kévin Laurent (ingénieur d'affaires). Échange téléphonique le 28/10 avec Morgane Prioux (RH). Entretien visio le 29/10 avec Kévin Laurent et Morgane Prioux : très bon ressenti. Entretien le 2/11 en présentiel avec Margot Rivière (manager équipe Data Analytics) : très bon retour. 06/11 : en attente de la confirmation du projet par le client, puis rencontre prévue avec Vincent Penot (responsable Data & IA). 12/11 : relance envoyée à Morgane Prioux. 13/11 : le client attend le déblocage du budget de la mission ; réponse attendue lundi 16 ou mardi 17/11."
+  },
+  {
+   "date": "2026-11-13",
+   "entreprise": "mc2i",
+   "poste": "Consultante PMO – Lyon",
+   "canal": "SITE",
+   "issue": "",
+   "retour": "",
+   "note": "Candidature via Workday, accusé de réception le 13/11"
   }
  ]
 }
