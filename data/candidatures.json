@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-16",
+ "maj": "2026-11-24",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -1142,9 +1142,9 @@
    "entreprise": "mc2i",
    "poste": "Consultante PMO – Lyon",
    "canal": "SITE",
-   "issue": "",
-   "retour": "",
-   "note": "Candidature via Workday, accusé de réception le 13/11"
+   "issue": "refus",
+   "retour": "2026-11-24",
+   "note": "Candidature via Workday, accusé de réception le 13/11 · Refus le 24/11 : pas de poste correspondant pour le moment, dossier conservé"
   }
  ]
 }
