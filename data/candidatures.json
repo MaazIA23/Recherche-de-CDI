@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-25",
+ "maj": "2026-11-27",
  "candidatures": [
   {
    "date": "2026-01-30",
@@ -1145,6 +1145,42 @@
    "issue": "refus",
    "retour": "2026-11-24",
    "note": "Candidature via Workday, accusé de réception le 13/11 · Refus le 24/11 : pas de poste correspondant pour le moment, dossier conservé"
+  },
+  {
+   "date": "2026-11-27",
+   "entreprise": "RTE",
+   "poste": "Chargé de projet SI Gestion des actifs F/H",
+   "canal": "SITE",
+   "issue": "",
+   "retour": "",
+   "note": "Via Meteojob, accusé de réception RTE (SmartRecruiters) le 27/11"
+  },
+  {
+   "date": "2026-11-27",
+   "entreprise": "RTE",
+   "poste": "Chargé de projet SI Outils Industriels F/H",
+   "canal": "SITE",
+   "issue": "",
+   "retour": "",
+   "note": "Via Meteojob, accusé de réception RTE (SmartRecruiters) le 27/11"
+  },
+  {
+   "date": "2026-11-27",
+   "entreprise": "eXalt",
+   "poste": "PMO H/F – Paris 1er (CDI)",
+   "canal": "SITE",
+   "issue": "",
+   "retour": "",
+   "note": "Via HelloWork, accusé de réception eXalt Flow le 27/11 · CV PMO adapté"
+  },
+  {
+   "date": "2026-11-27",
+   "entreprise": "SIMPLICITI",
+   "poste": "Chef de projet Mobilité (H/F)",
+   "canal": "SITE",
+   "issue": "",
+   "retour": "",
+   "note": "Via Taleez · candidature à finaliser : adresse e-mail à confirmer (e-mail du 27/11)"
   }
  ]
 }
